@@ -1,0 +1,34 @@
+package ejerciciosClase;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+import java.util.Scanner;
+/*
+Programa que le pide el nacimiento y calcula cuantos dias, meses y años han pasado hasta la fecha actual
+Usar is before y is after
+*/
+
+public class DaysLived {
+	public static long daysBetween(LocalDate f1, LocalDate f2) {
+		return Math.abs(f2.toEpochDay() - f1.toEpochDay());
+	}
+	
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Calculemos cuanto has vivido: ");
+		System.out.print("Introduzca su año de nacimiento: ");
+		int userYear = keyboard.nextInt();
+		System.out.print("Introduzca su mes de nacimiento: ");
+		int userMonth = keyboard.nextInt();
+		System.out.print("Introduzca su día de nacimiento: ");
+		int userDay = keyboard.nextInt();
+		
+		LocalDate userDate = LocalDate.of(userYear, userMonth, userDay);
+		LocalDate currentDate = LocalDate.now();
+		long daysPassed = daysBetween(currentDate, userDate);
+	
+		
+			
+		keyboard.close();
+	}
+}

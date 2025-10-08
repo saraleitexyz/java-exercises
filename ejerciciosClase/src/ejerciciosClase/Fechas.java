@@ -1,0 +1,34 @@
+package ejerciciosClase;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
+public class Fechas {
+	
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		LocalDate fechaActual = LocalDate.now();
+		System.out.println("Fecha actual: " + fechaActual);
+		
+		LocalDate inicioSiglo = LocalDate.of(2000, 1, 1);
+		System.out.println("Fecha específica: " + inicioSiglo);
+		
+		LocalDate inicioWWII=LocalDate.parse("1939-09-01");
+		System.out.println("Start of WWII: " + inicioWWII);
+		
+		String mesEnEspanol=fechaActual.getMonth().getDisplayName(TextStyle.FULL, new Locale("es","ES"));
+		System.out.println("Mes en español: " + mesEnEspanol);
+		
+		System.out.println(inicioSiglo.plusDays(100));
+		System.out.println(inicioSiglo.minusDays(100));
+		
+		System.out.println("Años bisiestos desde el 1900 a fecha actual:");
+		
+		for (int i = 1900; i < fechaActual.getYear(); i++) {
+			if (LocalDate.of(i, 1, 1).isLeapYear()) {
+				System.out.printf("El año %4d es bisiesto y febrerillo tiene %d días.%n", i, LocalDate.of(i, 2, 1).lengthOfMonth());
+			}
+		}
+	}
+
+}

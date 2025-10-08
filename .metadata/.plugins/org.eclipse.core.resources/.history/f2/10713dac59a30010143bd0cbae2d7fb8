@@ -1,0 +1,40 @@
+package ejerciciosClase;
+import java.time.LocalDate;
+import java.util.Scanner;
+
+/*
+Programa que le pide el nacimiento y calcula cuantos dias, meses y 
+años han pasado hasta la fecha actual.
+
+Ahora queremos coger las excepciones y que se repita el menú.
+*/
+
+public class DaysLived {
+	public static long daysBetween(LocalDate f1, LocalDate f2) {
+		return Math.abs(f2.toEpochDay() - f1.toEpochDay());
+	}
+	
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Calculemos cuanto has vivido: ");
+		
+		try {
+			System.out.print("Introduzca su año de nacimiento (YYYY): ");
+			int userYear = keyboard.nextInt();
+			System.out.print("Introduzca su mes de nacimiento (MM): ");
+			int userMonth = keyboard.nextInt();
+			System.out.print("Introduzca su día de nacimiento (DD): ");
+			int userDay = keyboard.nextInt();	
+			LocalDate userDate = LocalDate.of(userYear, userMonth, userDay);
+			LocalDate currentDate = LocalDate.now();
+			long daysPassed = daysBetween(currentDate, userDate);
+			System.out.printf("Han pasado %d años, que son %d meses y también son %d días.", daysPassed / 365, daysPassed / 12, daysPassed);
+		}
+		catch (Exception e) {
+			System.out.println("Introduce la fecha en el formato especificado.");
+		}
+		keyboard.close();
+	}
+	
+	
+}

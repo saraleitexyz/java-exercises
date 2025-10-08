@@ -1,0 +1,16 @@
+package ejerciciosClase;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
+public class Fechas {
+
+	public static void main(String[] args) {
+		LocalDate fechaActual = LocalDate.now();
+		System.out.println("Fecha actual: " + fechaActual);
+		
+		LocalDate inicioSiglo = LocalDate.of(2000, 1, 1);
+		System.out.println("Fecha específica: " + fechaEspecifica);
+	}
+
+}

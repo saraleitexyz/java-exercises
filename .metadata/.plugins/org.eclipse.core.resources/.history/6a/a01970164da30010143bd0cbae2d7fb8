@@ -1,0 +1,23 @@
+package ejerciciosClase;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
+public class Fechas {
+	
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		LocalDate fechaActual = LocalDate.now();
+		System.out.println("Fecha actual: " + fechaActual);
+		
+		LocalDate inicioSiglo = LocalDate.of(2000, 1, 1);
+		System.out.println("Fecha específica: " + inicioSiglo);
+		
+		LocalDate inicioWWII=LocalDate.parse("1939-09-01");
+		System.out.println("Start of WWII: " + inicioWWII);
+		
+		String mesEnEspanol=fechaActual.getMonth().getDisplayName(TextStyle.FULL, new Locale("es","ES"));
+		System.out.println("Mes en español: " + mesEnEspanol);
+	}
+
+}

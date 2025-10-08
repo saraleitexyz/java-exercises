@@ -1,0 +1,20 @@
+package ejerciciosClase;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+import java.util.Scanner;
+
+/*
+Programa que le pide el nacimiento y calcula cuantos dias, meses y años han pasado hasta la fecha actual
+Usar is before y is after
+*/
+
+public class DaysLived {
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println();
+		
+		LocalDate currentDate = LocalDate.now();
+			
+	}
+}
