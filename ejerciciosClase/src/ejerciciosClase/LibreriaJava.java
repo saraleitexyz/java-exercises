@@ -8,29 +8,29 @@ public class LibreriaJava {
 		public static long daysBetween(LocalDate f1, LocalDate f2) {
 			return Math.abs(f2.toEpochDay() - f1.toEpochDay());
 		}
-	}
 	
-	public static LocalDate pedirFecha(Scanner sc, String mensaje) {
-		LocalDate fecha=null;
-		boolean valida=false;
-		
-		while (!valida) {
-			try {
-				System.out.println(mensaje);
-				System.out.print("Año:");
-				int anio = sc.nextInt();
-				System.out.println("Mes: ");
-				int mes = sc.nextInt();
-				System.out.println("Día: ");
-				int dia = sc.nextInt();
-				
-				fecha = LocalDate.of(anio, mes, dia);
-				valida = true;
-			} catch (Exception e) {
-				System.out.println("Fecha no válida, inténtalo de nuevo.");
-				sc.nextLine();
+		public static LocalDate pedirFecha(Scanner sc, String mensaje) {
+			LocalDate fecha=null;
+			boolean valida=false;
+			
+			while (!valida) {
+				try {
+					System.out.println(mensaje);
+					System.out.print("Año:");
+					int anio = sc.nextInt();
+					System.out.println("Mes: ");
+					int mes = sc.nextInt();
+					System.out.println("Día: ");
+					int dia = sc.nextInt();
+					
+					fecha = LocalDate.of(anio, mes, dia);
+					valida = true;
+				} catch (Exception e) {
+					System.out.println("Fecha no válida, inténtalo de nuevo.");
+					sc.nextLine();
+				}
 			}
+			return fecha;
 		}
-		return fecha;
 	}
 }
