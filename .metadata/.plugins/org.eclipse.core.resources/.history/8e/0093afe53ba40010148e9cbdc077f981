@@ -1,0 +1,7 @@
+package ejerciciosClase;
+
+public class CambioTemp {
+	public static void main(String[] args) {
+		
+	}
+}

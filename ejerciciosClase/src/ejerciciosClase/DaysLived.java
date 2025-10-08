@@ -13,7 +13,7 @@ public class DaysLived {
 	public static long daysBetween(LocalDate f1, LocalDate f2) {
 		return Math.abs(f2.toEpochDay() - f1.toEpochDay());
 	}
-	
+/*	
 	public static LocalDate askDate(Scammer sc. String message) {
 		
 	}
@@ -23,7 +23,7 @@ public class DaysLived {
 	}
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		Scanner keyboard = new Scanner(System.in);
 		LocalDate f1=pedirfecha(sc)
 		
 		System.out.println("Calculemos cuanto has vivido: ");
@@ -50,5 +50,5 @@ public class DaysLived {
 		keyboard.close();
 	}
 	
-	
+*/	
 }
